@@ -6,9 +6,10 @@ class Resistor():
     valor = float
 
     def __init__(self, line): # line = 'Rident 1 2 1'
-        self.no1=int(line[-5])
-        self.no2=int(line[-3])
-        self.valor=int(line[-1])
+        line = line.split()
+        self.no1=int(line[-3])
+        self.no2=int(line[-2])
+        self.valor=float(line[-1])
 
 
 class Indutor():
@@ -18,6 +19,12 @@ class Indutor():
     no2 = int
     valor = float
 
+    def __init__(self, line): # line = 'Lident 3 1 2'
+        line = line.split()
+        self.no1=int(line[-3])
+        self.no2=int(line[-2])
+        self.valor=float(line[-1])
+
 
 class Capacitor():
 
@@ -25,6 +32,12 @@ class Capacitor():
     no1 = int
     no2 = int
     valor = float
+
+    def __init__(self, line): # line = 'Cident 2 1 1'
+        line = line.split()
+        self.no1=int(line[-3])
+        self.no2=int(line[-2])
+        self.valor=float(line[-1])
 
 
 class Transformador():
@@ -36,6 +49,14 @@ class Transformador():
     no_d = int
     valor = float
 
+    def __init__(self, line): # line = 'Kident 2 1 4 3 10'
+        line = line.split()
+        self.no_a=int(line[-5])
+        self.no_b=int(line[-4])
+        self.no_c=int(line[-3])
+        self.no_d=int(line[-2])
+        self.valor=float(line[-1])
+
 
 class FC(): # Fonte de corrente independente
 
@@ -45,9 +66,10 @@ class FC(): # Fonte de corrente independente
     valor = float
 
     def __init__(self, line): # line = 'Iident 0 1 2'
-        self.no1=int(line[-5])
-        self.no2=int(line[-3])
-        self.valor=int(line[-1])
+        line = line.split()
+        self.no1=int(line[-3])
+        self.no2=int(line[-2])
+        self.valor=float(line[-1])
 
 
 class FCT(): # Fonte de corrente controlada por tensão
@@ -58,6 +80,14 @@ class FCT(): # Fonte de corrente controlada por tensão
     no_controle_pos = int
     no_controle_neg = int
     valor = float
+
+    def __init__(self, line): # line = 'Gident 2 1 4 3 10'
+        line = line.split()
+        self.no_dreno=int(line[-5])
+        self.no_inject=int(line[-4])
+        self.no_controle_pos=int(line[-3])
+        self.no_controle_neg=int(line[-2])
+        self.valor=float(line[-1])
 
 
 components_dict = {Resistor.id: Resistor,
