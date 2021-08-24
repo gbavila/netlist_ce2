@@ -3,7 +3,7 @@ import numpy as np
 
 def file_readlines():
 
-    with open('netlists/netlist4.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
+    with open('netlists/netlist5.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
         lines = f.read().splitlines() 
     
     return lines
@@ -41,7 +41,7 @@ def apply_stamps(G_matrix, I_vector, components, sys_freq):
     for comp in components:
         if comp.id == FC.id:
             comp.applyStamp(I_vector)
-        elif comp.id == Capacitor.id or comp.id == Indutor.id:
+        elif comp.id == Capacitor.id or comp.id == Indutor.id or comp.id == Transformador.id:
             comp.applyStamp(G_matrix, sys_freq)
         else:
             comp.applyStamp(G_matrix)

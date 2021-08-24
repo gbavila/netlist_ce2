@@ -74,16 +74,46 @@ class Transformador():
     no_b = int
     no_c = int
     no_d = int
-    valor = float
+    ind1 = float
+    ind2 = float
+    ind_mutua = float
 
     def __init__(self, line): # line = 'Kident 2 1 4 3 10'
         line = line.split()
-        self.no_a=int(line[-5])
-        self.no_b=int(line[-4])
-        self.no_c=int(line[-3])
-        self.no_d=int(line[-2])
-        self.valor=float(line[-1])
+        self.no_a=int(line[1])
+        self.no_b=int(line[2])
+        self.no_c=int(line[4])
+        self.no_d=int(line[5])
+        self.ind1=float(line[3])
+        self.ind2=float(line[6])
+        self.ind_mutua=float(line[7])
         self.maior_no=int(max([self.no_a,self.no_b,self.no_c,self.no_d]))
+    
+    def applyStamp(self, G_matrix, freq):
+
+        T11 = self.ind2/(self.ind1*self.ind2-self.ind_mutua**2)
+        T22 = self.ind1/(self.ind1*self.ind2-self.ind_mutua**2)
+        T12 = -self.ind_mutua/(self.ind1*self.ind2-self.ind_mutua**2)
+
+        G_matrix[self.no_a][self.no_a] += T11/(1j*freq)
+        G_matrix[self.no_a][self.no_b] += -T11/(1j*freq)
+        G_matrix[self.no_a][self.no_c] += T12/(1j*freq)
+        G_matrix[self.no_a][self.no_d] += -T12/(1j*freq)
+
+        G_matrix[self.no_b][self.no_a] += -T11/(1j*freq)
+        G_matrix[self.no_b][self.no_b] += T11/(1j*freq)
+        G_matrix[self.no_b][self.no_c] += -T12/(1j*freq)
+        G_matrix[self.no_b][self.no_d] += T12/(1j*freq)
+
+        G_matrix[self.no_c][self.no_a] += T12/(1j*freq)
+        G_matrix[self.no_c][self.no_b] += -T12/(1j*freq)
+        G_matrix[self.no_c][self.no_c] += T22/(1j*freq)
+        G_matrix[self.no_c][self.no_d] += -T22/(1j*freq)
+
+        G_matrix[self.no_d][self.no_a] += -T12/(1j*freq)
+        G_matrix[self.no_d][self.no_b] += T12/(1j*freq)
+        G_matrix[self.no_d][self.no_c] += -T22/(1j*freq)
+        G_matrix[self.no_d][self.no_d] += T22/(1j*freq)
 
 
 class FC(): # Fonte de corrente independente
