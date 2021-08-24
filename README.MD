@@ -28,7 +28,6 @@ _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente
 
 - **_Fonte senoidal ( amplitude\*cos(frequência\*t + fase) )_**:<br/>
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
-<br/>
 
 **Fonte de corrente controlada por tensão**: <br/>
 _G<identificação> <nóI(fonte drena a corrente desse nó)> <nóI(fonte injeta a corrente nesse nó)> <nóv(positivo)> <nóv(negativo)> <valor da transcondutância Gm>_
