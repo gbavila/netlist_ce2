@@ -78,7 +78,7 @@ class Transformador():
     ind2 = float
     ind_mutua = float
 
-    def __init__(self, line): # line = 'Kident 2 1 4 3 10'
+    def __init__(self, line): # line = 'Kident 1 0 1 2 0 2 1'
         line = line.split()
         self.no_a=int(line[1])
         self.no_b=int(line[2])
@@ -128,7 +128,7 @@ class FC(): # Fonte de corrente independente
     fase = float
     valor = float
 
-    def __init__(self, line): # line = 'Iident 0 1 2'
+    def __init__(self, line): # line = 'Iident 0 1 DC 2' ou 'Iident 0 2 SIN 10 2 -0.78'
         line = line.split()
         self.no1=int(line[1])
         self.no2=int(line[2])

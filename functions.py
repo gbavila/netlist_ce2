@@ -21,8 +21,9 @@ def get_components(file_lines):
 
     for line in file_lines:
         id = line[0]
-        component = components_dict[id](line=line)
-        components.append(component) # components_dict definido no arquivo stamps.py
+        if id != "*":
+            component = components_dict[id](line=line)
+            components.append(component) # components_dict definido no arquivo stamps.py
 
     return components
 
