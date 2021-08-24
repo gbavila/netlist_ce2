@@ -3,7 +3,7 @@ import numpy as np
 
 def file_readlines():
 
-    with open('netlist.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
+    with open('netlists/netlist3.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
         lines = f.read().splitlines() 
     
     return lines
@@ -60,3 +60,14 @@ def remove_ground_eq(G_matrix, I_vector):
 
     for count in range(0,len(G_matrix),1):
         G_matrix[count].pop(0)
+
+def print_system(G_matrix, I_vector, e_vector):
+
+    print(f'\nMatriz de transcondutâncias: \n{np.array(G_matrix)}\n')
+    print(f'Vetor de correntes: \n{np.array(I_vector)}\n')
+    print(f'Vetor de tensões: \n{np.array(e_vector)}\n')
+
+    print("\nResultados Aproximados:\n")
+    for i in range (0, len(e_vector),1):
+        print(f'e{i+1} = {round(e_vector[i],3)} V')
+    print()

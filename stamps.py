@@ -34,8 +34,6 @@ class Indutor():
         self.no2=int(line[-2])
         self.valor=float(line[-1])
         self.maior_no=int(max([self.no1,self.no2]))
-    
-
 
 
 class Capacitor():
@@ -80,13 +78,25 @@ class FC(): # Fonte de corrente independente
     maior_no = int
     no1 = int # nó cuja corrente é drenada pela fonte
     no2 = int # nó cuja corrente é injetada pela fonte
+    tipo = str
+    amplitude = float
+    freq = float
+    fase = float
     valor = float
 
     def __init__(self, line): # line = 'Iident 0 1 2'
         line = line.split()
-        self.no1=int(line[-3])
-        self.no2=int(line[-2])
-        self.valor=float(line[-1])
+        self.no1=int(line[1])
+        self.no2=int(line[2])
+        if line[3] == 'DC' or line[3] == 'dc' or line[3] == 'Dc':
+            self.valor=float(line[-1])
+            self.tipo='DC'
+        else:
+            self.tipo='SIN'
+            self.amplitude=float(line[4])
+            self.freq=float(line[5])
+            self.fase=float(line[6])
+
         self.maior_no=int(max([self.no1,self.no2]))
 
     def applyStamp(self, I_vector):
@@ -112,6 +122,12 @@ class FCT(): # Fonte de corrente controlada por tensão
         self.no_controle_neg=int(line[-2])
         self.valor=float(line[-1])
         self.maior_no=int(max([self.no_dreno,self.no_inject,self.no_controle_pos,self.no_controle_neg]))
+
+    def applyStamp(self, G_matrix):
+        G_matrix[self.no_dreno][self.no_controle_pos] += self.valor
+        G_matrix[self.no_dreno][self.no_controle_neg] += -self.valor
+        G_matrix[self.no_inject][self.no_controle_pos] += -self.valor
+        G_matrix[self.no_inject][self.no_controle_neg] += self.valor
 
 
 components_dict = {Resistor.id: Resistor,
