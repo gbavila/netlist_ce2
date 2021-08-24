@@ -18,7 +18,7 @@ _C<identificação> <nó1> <nó2> <valor da capacitância>_
 <br/>
 
 **Transformador**: <br/>
-_K<identificação> <nó a> <nó b> <nó c> <nó d> <valor da indutância mútua>_
+_K<identificação> <nó a> <nó b> <indutância 1> <nó c> <nó d> <indutância 2> <valor da indutância mútua>_
 <br/>
 
 **Fonte de corrente**:
