@@ -1,9 +1,16 @@
 from stamps import *
 import numpy as np
 
-def file_readlines():
+def print_start_menu():
+    print()
+    print(35*"*")
+    print("Trabalho I - Circuitos Elétricos II\nGabriel Almeida Avila e Silva\n")
+    print(35*"*")
+    print("O seu arquivo da netlist deve estar na mesma pasta do arquivo main.py.\nCaso contrário, especifique todo o caminho para ele (path)")
 
-    with open('netlists/netlist5.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
+def file_readlines(file_name):
+
+    with open(f'{file_name}') as f: # O with já fecha o arquivo após sua finalização (f.close)
         lines = f.read().splitlines() 
     
     return lines

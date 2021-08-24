@@ -1,10 +1,13 @@
 from functions import (file_readlines, get_components, create_zeros_matrix, apply_stamps, 
-                       solve_system, remove_ground_eq, print_system, find_circuit_freq)
+                       solve_system, remove_ground_eq, print_system, find_circuit_freq, print_start_menu)
 import numpy as np
 
 def main():
+    print_start_menu()
 
-    lines = file_readlines()
+    file_name = input("\nNome do arquivo da netlist (inclua o .txt): ")
+
+    lines = file_readlines(file_name)
     components = get_components(lines)
     
     G_matrix, I_vector = create_zeros_matrix(components)
