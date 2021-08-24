@@ -39,13 +39,24 @@ def create_zeros_matrix(components):
 def apply_stamps(G_matrix, I_vector, components):
 
     for comp in components:
-        if comp.id == 'I':
+        if comp.id == FC.id:
             comp.applyStamp(I_vector)
         else:
             comp.applyStamp(G_matrix)
 
 def solve_system(G_matrix, I_vector):
 
-    e = []
+    G = np.array(G_matrix)
+
+    I = np.array(I_vector)
+
+    e = np.linalg.solve(G,I)
 
     return e
+
+def remove_ground_eq(G_matrix, I_vector):
+    G_matrix.pop(0)
+    I_vector.pop(0)
+
+    for count in range(0,len(G_matrix),1):
+        G_matrix[count].pop(0)
