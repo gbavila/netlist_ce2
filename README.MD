@@ -8,20 +8,18 @@ O input do programa é dado por um arquivo .txt representando a netlist do circu
 **Resistor**: 
 _R<identificação> <nó1> <nó2> <valor da resistência>_
 <br/><br/>
-<br/><br/>
 
 **Indutor**: 
 _L<identificação> <nó1> <nó2> <valor da indutância>_
-&nbsp;
-&nbsp;
+<br/><br/>
 
 **Capacitor**: 
 _C<identificação> <nó1> <nó2> <valor da capacitância>_
-
+<br/><br/>
 
 **Transformador**: 
 _K<identificação> <nó a> <nó b> <nó c> <nó d> <valor da indutância mútua>_
-
+<br/><br/>
 
 **Fonte de corrente**:
 
@@ -30,7 +28,7 @@ _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente
 
 - **_Fonte senoidal ( <amplitude>*cos(<frequência>*t + <fase>) ):_**
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
-
+<br/><br/>
 
 **Fonte de corrente controlada por tensão**: 
 _G<identificação> <nóI(fonte drena a corrente desse nó)> <nóI(fonte injeta a corrente nesse nó)> <nóv(positivo)> <nóv(negativo)> <valor da transcondutância Gm>_
