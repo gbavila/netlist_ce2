@@ -132,7 +132,7 @@ class FC(): # Fonte de corrente independente
         line = line.split()
         self.no1=int(line[1])
         self.no2=int(line[2])
-        if line[3] == 'DC' or line[3] == 'dc' or line[3] == 'Dc':
+        if line[3].upper() == 'DC':
             self.valor=float(line[-1])
             self.tipo='DC'
         else:
