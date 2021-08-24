@@ -21,12 +21,13 @@ _C<identificação> <nó1> <nó2> <valor da capacitância>_
 _K<identificação> <nó a> <nó b> <nó c> <nó d> <valor da indutância mútua>_
 
 
-- **Fonte de corrente**: 
-**_Fonte DC:_**
-_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <valor da corrente>_
+- **Fonte de corrente**:
 
-**_Fonte senoidal ( <amplitude>*cos(<frequência>*t + <fase>) ):_**
-_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
+* **_Fonte DC:_**
+* _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <valor da corrente>_
+
+* **_Fonte senoidal ( <amplitude>*cos(<frequência>*t + <fase>) ):_**
+* _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
 
 
 - **Fonte de corrente controlada por tensão**: 
