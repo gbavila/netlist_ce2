@@ -5,23 +5,23 @@
 O programa tem o objetivo de calcular todas as tensões de nó de um dado circuito.
 O input do programa é dado por um arquivo .txt representando a netlist do circuito. Cada linha representa um componente, informando suas principais informações. O padrão é o seguinte:
 
-**Resistor**: 
+- **Resistor**: 
 _R<identificação> <nó1> <nó2> <valor da resistência>_
 
 
-**Indutor**: 
+- **Indutor**: 
 _L<identificação> <nó1> <nó2> <valor da indutância>_
 
 
-**Capacitor**: 
+- **Capacitor**: 
 _C<identificação> <nó1> <nó2> <valor da capacitância>_
 
 
-**Transformador**: 
+- **Transformador**: 
 _K<identificação> <nó a> <nó b> <nó c> <nó d> <valor da indutância mútua>_
 
 
-**Fonte de corrente**: 
+- **Fonte de corrente**: 
 **_Fonte DC:_**
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <valor da corrente>_
 
@@ -29,5 +29,5 @@ _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
 
 
-**Fonte de corrente controlada por tensão**: 
+- **Fonte de corrente controlada por tensão**: 
 _G<identificação> <nóI(fonte drena a corrente desse nó)> <nóI(fonte injeta a corrente nesse nó)> <nóv(positivo)> <nóv(negativo)> <valor da transcondutância Gm>_
