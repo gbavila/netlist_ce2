@@ -24,10 +24,10 @@ _K<identificação> <nó a> <nó b> <indutância 1> <nó c> <nó d> <indutância
 **Fonte de corrente**:
 
 - **_Fonte DC_**:<br/>
-_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <valor da corrente>_
+_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <\valor da corrente>_
 
 - **_Fonte senoidal ( amplitude\*cos(frequência\*t + fase) )_**:<br/>
-_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
+_I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <\amplitude> <\frequência> <\fase>_
 
 **Fonte de corrente controlada por tensão**: <br/>
 _G<identificação> <nóI(fonte drena a corrente desse nó)> <nóI(fonte injeta a corrente nesse nó)> <nóv(positivo)> <nóv(negativo)> <valor da transcondutância Gm>_
