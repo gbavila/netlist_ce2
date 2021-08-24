@@ -1,5 +1,6 @@
 # Trabalho I - Circuitos Elétricos II
 ## Engenharia Eletrônica e de Computação - UFRJ
+### Professora Fernanda Duarte Vilela Reis de Oliveira
 ### Gabriel Almeida Avila e Silva
 
 O programa tem o objetivo de calcular todas as tensões de nó de um dado circuito.
