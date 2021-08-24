@@ -1,7 +1,7 @@
 # Trabalho I - Circuitos Elétricos II
 ## Engenharia Eletrônica e de Computação - UFRJ
-### Professora Fernanda Duarte Vilela Reis de Oliveira
-### Gabriel Almeida Avila e Silva
+### Professora: Fernanda Duarte Vilela Reis de Oliveira
+### Aluno: Gabriel Almeida Avila e Silva
 
 O programa tem o objetivo de calcular todas as tensões de nó de um dado circuito.
 O input do programa é dado por um arquivo .txt representando a netlist do circuito. Cada linha representa um componente, informando suas características e conexões. O padrão é o seguinte:
