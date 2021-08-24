@@ -3,7 +3,7 @@ import numpy as np
 
 def file_readlines():
 
-    with open('netlists/netlist3.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
+    with open('netlists/netlist4.txt') as f: # O with já fecha o arquivo após sua finalização (f.close)
         lines = f.read().splitlines() 
     
     return lines
@@ -36,11 +36,13 @@ def create_zeros_matrix(components):
 
     return G_matrix, I_vector
 
-def apply_stamps(G_matrix, I_vector, components):
+def apply_stamps(G_matrix, I_vector, components, sys_freq):
 
     for comp in components:
         if comp.id == FC.id:
             comp.applyStamp(I_vector)
+        elif comp.id == Capacitor.id or comp.id == Indutor.id:
+            comp.applyStamp(G_matrix, sys_freq)
         else:
             comp.applyStamp(G_matrix)
 
@@ -71,3 +73,11 @@ def print_system(G_matrix, I_vector, e_vector):
     for i in range (0, len(e_vector),1):
         print(f'e{i+1} = {round(e_vector[i],3)} V')
     print()
+
+def find_circuit_freq(components):
+
+    for c in components:
+        if c.id == FC.id and c.tipo == "SIN":
+            return c.freq
+    return None
+    

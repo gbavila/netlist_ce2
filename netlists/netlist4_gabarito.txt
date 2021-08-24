@@ -1,0 +1,7 @@
+* Exemplo basico de netlist.
+
+Resultados Aproximados:
+
+e1 = (1.473+2.954j) V
+e2 = (1.188+3.075j) V
+e3 = (1.286+3.047j) V

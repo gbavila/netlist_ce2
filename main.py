@@ -1,4 +1,4 @@
-from functions import file_readlines, get_components, create_zeros_matrix, apply_stamps, solve_system, remove_ground_eq, print_system
+from functions import file_readlines, get_components, create_zeros_matrix, apply_stamps, solve_system, remove_ground_eq, print_system, find_circuit_freq
 import numpy as np
 
 def main():
@@ -10,7 +10,9 @@ def main():
     
     G_matrix, I_vector = create_zeros_matrix(components)
 
-    apply_stamps(G_matrix, I_vector, components)
+    freq = find_circuit_freq(components)  # Assumindo que o circuito só terá uma frequência nas fontes de corrente
+
+    apply_stamps(G_matrix, I_vector, components, freq)
 
     remove_ground_eq(G_matrix, I_vector)
 

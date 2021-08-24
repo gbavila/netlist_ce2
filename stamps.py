@@ -1,3 +1,5 @@
+from math import e
+
 class Resistor(): 
 
     id = 'R'
@@ -35,6 +37,12 @@ class Indutor():
         self.valor=float(line[-1])
         self.maior_no=int(max([self.no1,self.no2]))
 
+    def applyStamp(self, G_matrix, freq):
+        G_matrix[self.no1][self.no1] += 1/(1j*freq*self.valor)
+        G_matrix[self.no2][self.no2] += 1/(1j*freq*self.valor)
+        G_matrix[self.no1][self.no2] += -1/(1j*freq*self.valor)
+        G_matrix[self.no2][self.no1] += -1/(1j*freq*self.valor)
+
 
 class Capacitor():
 
@@ -50,6 +58,12 @@ class Capacitor():
         self.no2=int(line[-2])
         self.valor=float(line[-1])
         self.maior_no=int(max([self.no1,self.no2]))
+
+    def applyStamp(self, G_matrix, freq):
+        G_matrix[self.no1][self.no1] += 1j*freq*self.valor
+        G_matrix[self.no2][self.no2] += 1j*freq*self.valor
+        G_matrix[self.no1][self.no2] += -1j*freq*self.valor
+        G_matrix[self.no2][self.no1] += -1j*freq*self.valor
 
 
 class Transformador():
@@ -100,8 +114,12 @@ class FC(): # Fonte de corrente independente
         self.maior_no=int(max([self.no1,self.no2]))
 
     def applyStamp(self, I_vector):
-        I_vector[self.no1] += -self.valor
-        I_vector[self.no2] += self.valor
+        if self.tipo == "DC":
+            I_vector[self.no1] += -self.valor
+            I_vector[self.no2] += self.valor
+        else:
+            I_vector[self.no1] += -self.amplitude*e**(1j*self.fase)
+            I_vector[self.no2] += self.amplitude*e**(1j*self.fase)
 
 
 class FCT(): # Fonte de corrente controlada por tensão
