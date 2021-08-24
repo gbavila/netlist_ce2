@@ -23,10 +23,10 @@ _K<identificação> <nó a> <nó b> <nó c> <nó d> <valor da indutância mútua
 
 **Fonte de corrente**:
 
-- **_Fonte DC:_**
+- **_Fonte DC_**:<br/>
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> DC <valor da corrente>_
 
-- **_Fonte senoidal ( <amplitude>*cos(<frequência>*t + <fase>) ):_**
+- **_Fonte senoidal ( <amplitude>*cos(<frequência>*t + <fase>) )_**:<br/>
 _I<identificação> <nó cuja corrente é drenada pela fonte> <nó cuja corrente é injetada pela fonte> SIN <amplitude> <frequência> <fase>_
 <br/><br/>
 
