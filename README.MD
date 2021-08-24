@@ -3,7 +3,7 @@
 ### Gabriel Almeida Avila e Silva
 
 O programa tem o objetivo de calcular todas as tensões de nó de um dado circuito.
-O input do programa é dado por um arquivo .txt representando a netlist do circuito. Cada linha representa um componente, informando suas principais informações. O padrão é o seguinte:
+O input do programa é dado por um arquivo .txt representando a netlist do circuito. Cada linha representa um componente, informando suas características e conexões. O padrão é o seguinte:
 
 **Resistor**: <br/>
 _R<identificação> <nó1> <nó2> <valor da resistência>_
