@@ -7,11 +7,13 @@ O input do programa é dado por um arquivo .txt representando a netlist do circu
 
 **Resistor**: 
 _R<identificação> <nó1> <nó2> <valor da resistência>_
-
+<br/><br/>
+<br/><br/>
 
 **Indutor**: 
 _L<identificação> <nó1> <nó2> <valor da indutância>_
-
+&nbsp;
+&nbsp;
 
 **Capacitor**: 
 _C<identificação> <nó1> <nó2> <valor da capacitância>_
